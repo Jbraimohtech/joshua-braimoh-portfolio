@@ -4,8 +4,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FadeIn } from "@/components/animated/fade-in";
 import { FloatOrb } from "@/components/animated/float-orb";
+import { ImageReveal } from "@/components/animated/image-reveal";
 import { StatCard } from "@/components/animated/stat-card";
-import Image from "next/image";
 import ProfileImage from "../assets/joshuaProfileimage.png";
 import Ambchapcorps from "../assets/armchorp-spot-img.png";
 import ToolBoss from "../assets/2oolBoss-spot-image.png";
@@ -191,7 +191,7 @@ export default function Home() {
             delay={100}
           >
             <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
-            INDEPENDENT PRODUCT BUILDER • INDIA / WORLDWIDE
+            INDEPENDENT PRODUCT BUILDER • NIGERIA / WORLDWIDE
           </FadeIn>
 
           <div className="relative">
@@ -213,23 +213,22 @@ export default function Home() {
               className="absolute right-0 top-8 hidden h-36 w-36 overflow-hidden rounded-full border-4 border-white shadow-xl md:block lg:right-8 lg:h-44 lg:w-44"
               delay={220}
             >
-              <div className="flex h-full w-full items-center justify-center bg-slate-200 text-slate-400">
-                <Image
-                  src={ProfileImage}
-                  alt="Profile"
-                  width={176}
-                  height={176}
-                  className="h-full w-full object-cover"
-                />
-              </div>
+              <ImageReveal
+                src={ProfileImage}
+                alt="Profile"
+                fill
+                sizes="(max-width: 1024px) 144px, 176px"
+                className="h-full w-full bg-slate-200"
+                imageClassName="object-cover"
+              />
             </FadeIn>
           </div>
 
           <div className="mt-12 grid gap-8 md:grid-cols-2">
             <FadeIn as="div" className="min-w-0" delay={260}>
               <p className="max-w-md text-sm leading-relaxed text-slate-600">
-                I help founders turn ideas into production-ready MVPs, SaaS
-                platforms, and AI products—from first screen to launch.
+                I help founders transform ideas into production-ready MVPs and
+                SaaS platforms—from the first screen all the way to launch.
               </p>
 
               <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:flex-wrap sm:items-center">
@@ -273,9 +272,6 @@ export default function Home() {
           >
             <span className="flex items-center gap-2">
               <span className="text-blue-500">✦</span> FULL-STACK DEVELOPMENT
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="text-blue-500">✦</span> AI AUTOMATION
             </span>
             <span className="flex items-center gap-2">
               <span className="text-blue-500">✦</span> DESIGN DIRECTION
@@ -350,12 +346,13 @@ export default function Home() {
               className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-slate-800"
               delay={220}
             >
-              <Image
+              <ImageReveal
                 src={Ambchapcorps}
                 alt="Ambchapcorps project preview"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+                className="absolute inset-0"
+                imageClassName="object-cover"
               />
               <button className="absolute left-6 top-6 flex h-14 w-14 items-center justify-center rounded-full bg-blue-500 text-sm font-semibold text-white shadow-lg">
                 VIEW
@@ -369,12 +366,13 @@ export default function Home() {
               className="order-2 relative aspect-[4/3] overflow-hidden rounded-2xl bg-slate-800 lg:order-1"
               delay={180}
             >
-              <Image
+              <ImageReveal
                 src={ToolBoss}
                 alt="ToolBoss project preview"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+                className="absolute inset-0"
+                imageClassName="object-cover"
               />
               <button className="absolute left-6 top-6 flex h-14 w-14 items-center justify-center rounded-full bg-blue-500 text-sm font-semibold text-white shadow-lg">
                 VIEW
@@ -452,12 +450,13 @@ export default function Home() {
               className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-slate-800"
               delay={220}
             >
-              <Image
+              <ImageReveal
                 src={ShoeShop}
                 alt="E-commerce Agency project preview"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+                className="absolute inset-0"
+                imageClassName="object-cover"
               />
               <button className="absolute left-6 top-6 flex h-14 w-14 items-center justify-center rounded-full bg-blue-500 text-sm font-semibold text-white shadow-lg">
                 VIEW
@@ -492,12 +491,13 @@ export default function Home() {
           <div className="mt-16 grid gap-12 lg:grid-cols-2 lg:items-start">
             <FadeIn as="div" className="relative" delay={220}>
               <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-slate-200">
-                <Image
+                <ImageReveal
                   src={ProfileImage}
                   alt="Portrait of Joshua"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
+                  className="absolute inset-0"
+                  imageClassName="object-cover"
                 />
               </div>
               <div className="absolute bottom-6 left-6 rounded-lg bg-white px-4 py-2 text-xs font-medium shadow">
@@ -569,10 +569,11 @@ export default function Home() {
               {[
                 { name: "Next.js", num: "01", accent: true },
                 { name: "React", num: "02" },
-                { name: "Node.js", num: "03" },
+                { name: "Node.js", num: "03", accent: true },
                 { name: "TypeScript", num: "04" },
-                { name: "React Native", num: "05", accent: true },
-                { name: "Git", num: "06" },
+                { name: "React Native", num: "05" },
+                { name: "Git", num: "06", accent: true },
+                { name: "Vercel", num: "07" },
               ].map((item, index) => (
                 <FadeIn
                   as="div"
@@ -716,7 +717,9 @@ export default function Home() {
                   team.
                 </p>
               </div>
-              <div className="text-right text-xl font-medium">$999 / MONTH</div>
+              <div className="text-right text-xl font-medium">
+                Open to Negotiation / MONTH
+              </div>
             </div>
 
             <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -746,7 +749,9 @@ export default function Home() {
                   Project Development
                 </h3>
               </div>
-              <div className="text-right text-xl font-medium">$999+</div>
+              <div className="text-right text-xl font-medium">
+                Open to Negotiation
+              </div>
             </div>
           </div>
         </div>
