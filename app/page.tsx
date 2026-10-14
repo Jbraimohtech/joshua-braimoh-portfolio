@@ -6,10 +6,8 @@ import { FadeIn } from "@/components/animated/fade-in";
 import { FloatOrb } from "@/components/animated/float-orb";
 import { ImageReveal } from "@/components/animated/image-reveal";
 import { StatCard } from "@/components/animated/stat-card";
+import { caseStudies } from "@/lib/case-studies";
 import ProfileImage from "../assets/joshuaProfileimage.png";
-import Ambchapcorps from "../assets/armchorp-spot-img.png";
-import ToolBoss from "../assets/2oolBoss-spot-image.png";
-import ShoeShop from "../assets/shoeShop-spot-image.png";
 
 const navItems = [
   { label: "WORK", href: "#work" },
@@ -315,15 +313,11 @@ export default function Home() {
                 <span>01</span>
                 <span>2026</span>
               </div>
-              <h3 className="text-4xl font-bold">Ambchapcorps</h3>
-              <p className="mt-1 text-slate-400">A Paramilitary Website</p>
+              <h3 className="text-4xl font-bold">{caseStudies[0].title}</h3>
+              <p className="mt-1 text-slate-400">{caseStudies[0].subtitle}</p>
 
               <div className="mt-6 flex flex-wrap gap-2">
-                {[
-                  "CONVERSION DRIVEN RECRUITMENT",
-                  "STORY PLANNING",
-                  "CONTENT WORKFLOW",
-                ].map((tag) => (
+                {caseStudies[0].tags.map((tag) => (
                   <span
                     key={tag}
                     className="rounded-full border border-slate-600 px-3 py-1 text-xs text-slate-300"
@@ -333,12 +327,12 @@ export default function Home() {
                 ))}
               </div>
 
-              <a
-                href="#"
+              <Link
+                href={`/work/${caseStudies[0].slug}`}
                 className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-white underline-offset-4 hover:underline"
               >
                 Read product story <span>↗</span>
-              </a>
+              </Link>
             </FadeIn>
 
             <FadeIn
@@ -347,16 +341,21 @@ export default function Home() {
               delay={220}
             >
               <ImageReveal
-                src={Ambchapcorps}
-                alt="Ambchapcorps project preview"
+                src={caseStudies[0].image}
+                alt={caseStudies[0].imageAlt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="absolute inset-0"
                 imageClassName="object-cover"
               />
-              <button className="absolute left-6 top-6 flex h-14 w-14 items-center justify-center rounded-full bg-blue-500 text-sm font-semibold text-white shadow-lg">
+              <a
+                href="https://accgl.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute left-6 top-6 flex h-14 w-14 items-center justify-center rounded-full bg-blue-500 text-sm font-semibold text-white shadow-lg"
+              >
                 VIEW
-              </button>
+              </a>
             </FadeIn>
           </div>
 
@@ -367,16 +366,21 @@ export default function Home() {
               delay={180}
             >
               <ImageReveal
-                src={ToolBoss}
-                alt="ToolBoss project preview"
+                src={caseStudies[1].image}
+                alt={caseStudies[1].imageAlt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="absolute inset-0"
                 imageClassName="object-cover"
               />
-              <button className="absolute left-6 top-6 flex h-14 w-14 items-center justify-center rounded-full bg-blue-500 text-sm font-semibold text-white shadow-lg">
+              <a
+                href="https://dev-events-nextjs-gamma.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute left-6 top-6 flex h-14 w-14 items-center justify-center rounded-full bg-blue-500 text-sm font-semibold text-white shadow-lg"
+              >
                 VIEW
-              </button>
+              </a>
             </FadeIn>
 
             <FadeIn as="div" className="order-1 lg:order-2" delay={220}>
@@ -384,15 +388,11 @@ export default function Home() {
                 <span>02</span>
                 <span>2026</span>
               </div>
-              <h3 className="text-4xl font-bold">Roamer</h3>
-              <p className="mt-1 text-slate-400">Mobile Travel Planning App</p>
+              <h3 className="text-4xl font-bold">{caseStudies[1].title}</h3>
+              <p className="mt-1 text-slate-400">{caseStudies[1].subtitle}</p>
 
               <div className="mt-6 flex flex-wrap gap-2">
-                {[
-                  "SMART ITINERARIES",
-                  "TRIP COLLABORATION",
-                  "PLACES & NOTES",
-                ].map((tag) => (
+                {caseStudies[1].tags.map((tag) => (
                   <span
                     key={tag}
                     className="rounded-full border border-slate-600 px-3 py-1 text-xs text-slate-300"
@@ -402,12 +402,12 @@ export default function Home() {
                 ))}
               </div>
 
-              <a
-                href="#"
+              <Link
+                href={`/work/${caseStudies[1].slug}`}
                 className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-white underline-offset-4 hover:underline"
               >
                 Read product story <span>↗</span>
-              </a>
+              </Link>
             </FadeIn>
           </div>
 
@@ -417,17 +417,11 @@ export default function Home() {
                 <span>03</span>
                 <span>2026</span>
               </div>
-              <h3 className="text-4xl font-bold">E-commerce Agency</h3>
-              <p className="mt-1 text-slate-400">
-                Creative Digital Agency Website
-              </p>
+              <h3 className="text-4xl font-bold">{caseStudies[2].title}</h3>
+              <p className="mt-1 text-slate-400">{caseStudies[2].subtitle}</p>
 
               <div className="mt-6 flex flex-wrap gap-2">
-                {[
-                  "EDITORIAL LANDING PAGE",
-                  "SERVICE SHOWCASE",
-                  "RESPONSIVE EXPERIENCE",
-                ].map((tag) => (
+                {caseStudies[2].tags.map((tag) => (
                   <span
                     key={tag}
                     className="rounded-full border border-slate-600 px-3 py-1 text-xs text-slate-300"
@@ -437,12 +431,12 @@ export default function Home() {
                 ))}
               </div>
 
-              <a
-                href="#"
+              <Link
+                href={`/work/${caseStudies[2].slug}`}
                 className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-white underline-offset-4 hover:underline"
               >
-                Selected preview
-              </a>
+                Read product story <span>↗</span>
+              </Link>
             </FadeIn>
 
             <FadeIn
@@ -451,16 +445,21 @@ export default function Home() {
               delay={220}
             >
               <ImageReveal
-                src={ShoeShop}
-                alt="E-commerce Agency project preview"
+                src={caseStudies[2].image}
+                alt={caseStudies[2].imageAlt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="absolute inset-0"
                 imageClassName="object-cover"
               />
-              <button className="absolute left-6 top-6 flex h-14 w-14 items-center justify-center rounded-full bg-blue-500 text-sm font-semibold text-white shadow-lg">
+              <a
+                href="https://shoeproject-beta.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute left-6 top-6 flex h-14 w-14 items-center justify-center rounded-full bg-blue-500 text-sm font-semibold text-white shadow-lg"
+              >
                 VIEW
-              </button>
+              </a>
             </FadeIn>
           </div>
         </div>
@@ -850,14 +849,14 @@ export default function Home() {
               },
               {
                 quote:
-                  "Joshua's expertise with AI development tools like Lovable and modern tech stack helped us build a scalable product that handles thousands of users seamlessly.",
-                name: "Elena Rodriguez",
-                role: "CEO at StartupXYZ",
-                initials: "ER",
+                  "Joshua's expertise with modern tech stack helped us build a scalable product that handles thousands of users seamlessly.",
+                name: "Sarah Nosa",
+                role: "CEO at Velom Footwear",
+                initials: "SN",
               },
               {
                 quote:
-                  "The combination of AI tools and traditional development that Joshua brings is unmatched. Our time-to-market was reduced by 50%.",
+                  "The traditional development that Joshua brings is unmatched. Our time-to-market was reduced by 50%.",
                 name: "David Park",
                 role: "CTO at RapidBuild Inc",
                 initials: "DP",
