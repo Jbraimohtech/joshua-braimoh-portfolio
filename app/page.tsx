@@ -349,7 +349,7 @@ export default function Home() {
                 imageClassName="object-cover"
               />
               <a
-                href="https://accgl.netlify.app"
+                href="https://ambchaplaincorps.org"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="absolute left-6 top-6 flex h-14 w-14 items-center justify-center rounded-full bg-blue-500 text-sm font-semibold text-white shadow-lg"
@@ -840,13 +840,13 @@ export default function Home() {
 
           <div className="mt-16 grid gap-6 md:grid-cols-2">
             {[
-              {
-                quote:
-                  "Working with Joshua was game-changing. His AI-assisted development approach saved us months of development time. The MVP exceeded our expectations.",
-                name: "Marcus Johnson",
-                role: "Product Manager at InnovateLab",
-                initials: "MJ",
-              },
+              // {
+              //   quote:
+              //     "Working with Joshua was game-changing. His AI-assisted development approach saved us months of development time. The MVP exceeded our expectations.",
+              //   name: "Marcus Johnson",
+              //   role: "Product Manager at InnovateLab",
+              //   initials: "MJ",
+              // },
               {
                 quote:
                   "Joshua's expertise with modern tech stack helped us build a scalable product that handles thousands of users seamlessly.",
@@ -926,12 +926,18 @@ export default function Home() {
 
           <div className="mt-20 flex flex-wrap items-center justify-between gap-6 border-t border-slate-200 pt-8 text-xs text-slate-500">
             <div className="flex gap-6">
-              <a href="#" className="hover:text-slate-900">
+              <a
+                href="http://www.linkedin.com/in/joshua-braimoh-eroumousele"
+                className="hover:text-slate-900"
+              >
                 LINKEDIN
               </a>
-              {/* <a href="#" className="hover:text-slate-900">
+              <a
+                href="https://x.com/jbraimoh_"
+                className="hover:text-slate-900"
+              >
                 X / TWITTER
-              </a> */}
+              </a>
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=braimohjoshua%40gmail.com"
                 target="_blank"
