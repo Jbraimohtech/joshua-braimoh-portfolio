@@ -9,7 +9,8 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: "Joshua Braimoh | Portfolio",
-  description: "Independent product builder and full-stack developer portfolio",
+  description:
+    "Frontend developer building responsive websites and web app interfaces with React and Next.js.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

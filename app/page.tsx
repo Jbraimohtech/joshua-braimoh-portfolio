@@ -8,6 +8,8 @@ import { ImageReveal } from "@/components/animated/image-reveal";
 import { StatCard } from "@/components/animated/stat-card";
 import { caseStudies } from "@/lib/case-studies";
 import ProfileImage from "../assets/joshuaProfileimage.png";
+import Image from "next/image";
+import MidomanHomeScrren from "../assets/midomanHomeScrren.png";
 
 const navItems = [
   { label: "WORK", href: "#work" },
@@ -169,7 +171,7 @@ export default function Home() {
           </div>
 
           <div className="mt-auto pb-10 text-sm text-slate-500">
-            <p>Independent Product Builder</p>
+            <p>Frontend Developer</p>
             <p className="mt-1">Nigeria / Worldwide</p>
           </div>
         </div>
@@ -189,7 +191,7 @@ export default function Home() {
             delay={100}
           >
             <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
-            INDEPENDENT PRODUCT BUILDER • NIGERIA / WORLDWIDE
+            FRONTEND DEVELOPER • NIGERIA / WORLDWIDE
           </FadeIn>
 
           <div className="relative">
@@ -198,12 +200,11 @@ export default function Home() {
               className="max-w-4xl text-5xl font-bold leading-[1.05] tracking-tight text-slate-900 sm:text-6xl md:text-7xl"
               delay={160}
             >
-              I TURN FOUNDER IDEAS
+              I BUILD FRONTEND
               <br />
-              INTO PRODUCTS
+              EXPERIENCES
               <br />
-              READY FOR{" "}
-              <span className="italic text-blue-600">real users.</span>
+              PEOPLE LOVE <span className="italic text-blue-600">to use.</span>
             </FadeIn>
 
             <FadeIn
@@ -225,8 +226,8 @@ export default function Home() {
           <div className="mt-12 grid gap-8 md:grid-cols-2">
             <FadeIn as="div" className="min-w-0" delay={260}>
               <p className="max-w-md text-sm leading-relaxed text-slate-600">
-                I help founders transform ideas into production-ready MVPs and
-                SaaS platforms—from the first screen all the way to launch.
+                I turn product ideas into polished, responsive websites and web
+                app interfaces that feel clear and easy to use.
               </p>
 
               <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:flex-wrap sm:items-center">
@@ -269,13 +270,13 @@ export default function Home() {
             delay={540}
           >
             <span className="flex items-center gap-2">
-              <span className="text-blue-500">✦</span> FULL-STACK DEVELOPMENT
+              <span className="text-blue-500">✦</span> FRONTEND DEVELOPMENT
             </span>
             <span className="flex items-center gap-2">
-              <span className="text-blue-500">✦</span> DESIGN DIRECTION
+              <span className="text-blue-500">✦</span> RESPONSIVE INTERFACES
             </span>
             <span className="flex items-center gap-2">
-              <span className="text-blue-500">✦</span> PRODUCT STRATEGY
+              <span className="text-blue-500">✦</span> UI DEVELOPMENT
             </span>
           </FadeIn>
         </div>
@@ -302,8 +303,8 @@ export default function Home() {
               promises.
             </h2>
             <p className="max-w-sm text-sm text-slate-400">
-              A selected public set of products I’ve designed and built.
-              Additional client work remains under NDA.
+              A selection of live websites and web app interfaces, with a focus
+              on clear, responsive frontend experiences.
             </p>
           </FadeIn>
 
@@ -340,16 +341,18 @@ export default function Home() {
               className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-slate-800"
               delay={220}
             >
-              <ImageReveal
-                src={caseStudies[0].image}
-                alt={caseStudies[0].imageAlt}
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="absolute inset-0"
-                imageClassName="object-cover"
-              />
+              {caseStudies[0].image && (
+                <ImageReveal
+                  src={caseStudies[0].image}
+                  alt={caseStudies[0].imageAlt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="absolute inset-0"
+                  imageClassName="object-cover"
+                />
+              )}
               <a
-                href="https://ambchaplaincorps.org"
+                href={caseStudies[0].liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="absolute left-6 top-6 flex h-14 w-14 items-center justify-center rounded-full bg-blue-500 text-sm font-semibold text-white shadow-lg"
@@ -365,16 +368,18 @@ export default function Home() {
               className="order-2 relative aspect-[4/3] overflow-hidden rounded-2xl bg-slate-800 lg:order-1"
               delay={180}
             >
-              <ImageReveal
-                src={caseStudies[1].image}
-                alt={caseStudies[1].imageAlt}
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="absolute inset-0"
-                imageClassName="object-cover"
-              />
+              {caseStudies[1].image && (
+                <ImageReveal
+                  src={caseStudies[1].image}
+                  alt={caseStudies[1].imageAlt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="absolute inset-0"
+                  imageClassName="object-cover"
+                />
+              )}
               <a
-                href="https://dev-events-nextjs-gamma.vercel.app"
+                href={caseStudies[1].liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="absolute left-6 top-6 flex h-14 w-14 items-center justify-center rounded-full bg-blue-500 text-sm font-semibold text-white shadow-lg"
@@ -444,19 +449,73 @@ export default function Home() {
               className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-slate-800"
               delay={220}
             >
-              <ImageReveal
-                src={caseStudies[2].image}
-                alt={caseStudies[2].imageAlt}
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="absolute inset-0"
-                imageClassName="object-cover"
-              />
+              {caseStudies[2].image && (
+                <ImageReveal
+                  src={caseStudies[2].image}
+                  alt={caseStudies[2].imageAlt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="absolute inset-0"
+                  imageClassName="object-cover"
+                />
+              )}
               <a
-                href="https://shoeproject-beta.vercel.app"
+                href={caseStudies[2].liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="absolute left-6 top-6 flex h-14 w-14 items-center justify-center rounded-full bg-blue-500 text-sm font-semibold text-white shadow-lg"
+              >
+                VIEW
+              </a>
+            </FadeIn>
+          </div>
+
+          <div className="mt-28 grid gap-10 lg:grid-cols-2 lg:items-center">
+            <FadeIn as="div" delay={180}>
+              <div className="mb-6 flex items-center justify-between text-xs text-slate-400">
+                <span>04</span>
+                <span>2026</span>
+              </div>
+              <h3 className="text-4xl font-bold">{caseStudies[3].title}</h3>
+              <p className="mt-1 text-slate-400">{caseStudies[3].subtitle}</p>
+
+              <div className="mt-6 flex flex-wrap gap-2">
+                {caseStudies[3].tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-slate-600 px-3 py-1 text-xs text-slate-300"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <Link
+                href={`/work/${caseStudies[3].slug}`}
+                className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-white underline-offset-4 hover:underline"
+              >
+                Read product story <span>↗</span>
+              </Link>
+            </FadeIn>
+
+            <FadeIn
+              as="div"
+              className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-slate-800"
+              delay={220}
+            >
+              <Image
+                src={MidomanHomeScrren}
+                alt="Midoman Bank App home screen"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+              <a
+                href={caseStudies[3].liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View ${caseStudies[3].title}`}
+                className="absolute left-6 top-6 z-10 flex h-14 w-14 items-center justify-center rounded-full bg-blue-500 text-sm font-semibold text-white shadow-lg"
               >
                 VIEW
               </a>
@@ -472,7 +531,7 @@ export default function Home() {
             className="mb-4 text-xs tracking-widest text-slate-500"
             delay={100}
           >
-            02 / ABOUT THE BUILDER
+            02 / ABOUT THE FRONTEND DEVELOPER
           </FadeIn>
 
           <FadeIn
@@ -480,10 +539,11 @@ export default function Home() {
             className="max-w-3xl text-5xl font-bold leading-tight text-slate-900 md:text-6xl"
             delay={160}
           >
-            I bridge the gap between{" "}
-            <span className="italic text-blue-600">“what if?”</span> and{" "}
+            I turn product ideas into{" "}
+            <span className="italic text-blue-600">clear interfaces</span> that
+            feel{" "}
             <span className="underline decoration-2 underline-offset-4">
-              “it’s live.”
+              easy to use.
             </span>
           </FadeIn>
 
@@ -508,15 +568,14 @@ export default function Home() {
 
             <FadeIn as="div" delay={260}>
               <p className="text-lg leading-relaxed text-slate-700">
-                I’m Joshua — an independent full-stack developer and MVP
-                specialist who thinks like a designer and ships like an
-                engineer.
+                I’m Joshua — a frontend developer who enjoys turning product
+                ideas into clear, responsive web experiences.
               </p>
               <p className="mt-6 text-slate-600">
-                For 2+ years, I’ve helped founders untangle complex ideas, find
-                the sharpest version of their product, and get it into users’
-                hands. My sweet spot is the messy middle where product thinking,
-                interface design, AI, and engineering meet.
+                For 2+ years, I’ve worked with founders and teams to shape ideas
+                into thoughtful websites and web app interfaces. I care about
+                the details people notice every day: clear layouts, responsive
+                behavior, and interactions that feel natural.
               </p>
 
               <div className="mt-12 grid grid-cols-3 gap-2 sm:gap-6">
@@ -545,13 +604,15 @@ export default function Home() {
             delay={150}
           >
             <h2 className="max-w-xl text-5xl font-bold leading-tight text-slate-900 md:text-6xl">
-              Ideas need more than{" "}
-              <span className="italic text-blue-600">good code.</span>
+              Thoughtful interfaces.
+              <br />
+              <span className="italic text-blue-600">
+                Reliable frontend code.
+              </span>
             </h2>
             <p className="max-w-sm text-sm text-slate-600">
-              I combine product thinking, visual judgment, engineering, and AI
-              workflows to move from unclear brief to finished product without
-              handoff friction.
+              I build responsive interfaces with modern frontend tools, with
+              care for the small details that make a product easier to use.
             </p>
           </FadeIn>
 
@@ -568,11 +629,11 @@ export default function Home() {
               {[
                 { name: "Next.js", num: "01", accent: true },
                 { name: "React", num: "02" },
-                { name: "Node.js", num: "03", accent: true },
-                { name: "TypeScript", num: "04" },
-                { name: "React Native", num: "05" },
-                { name: "Git", num: "06", accent: true },
-                { name: "Vercel", num: "07" },
+                { name: "TypeScript", num: "03", accent: true },
+                { name: "JavaScript", num: "04" },
+                { name: "Tailwind CSS", num: "05", accent: true },
+                { name: "HTML & CSS", num: "06" },
+                { name: "React Native", num: "07", accent: true },
               ].map((item, index) => (
                 <FadeIn
                   as="div"
@@ -595,19 +656,19 @@ export default function Home() {
           <div className="mt-20">
             <div className="mb-6 flex items-center justify-between text-xs font-medium tracking-widest text-slate-500">
               <span>EXTENDED TOOLKIT</span>
-              <span>15 CAPABILITIES</span>
+              <span>8 CAPABILITIES</span>
             </div>
 
             <div className="grid grid-cols-1 gap-x-12 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
               {[
-                "JavaScript",
-                "Express.js",
-                "MongoDB",
-                "PostgreSQL",
-                "MySQL",
+                "Responsive design",
+                "Component-based UI",
+                "Semantic HTML",
+                "CSS",
                 "API Integration",
-                "ChatGPT",
-                "Tailwind CSS",
+                "Git",
+                "Vercel",
+                "Accessible interfaces",
               ].map((tool, i) => (
                 <div
                   key={tool}
@@ -646,8 +707,8 @@ export default function Home() {
               {[
                 {
                   num: "02",
-                  title: "Web Developer",
-                  text: "Helping startups and entrepreneurs rapidly prototype and launch their ideas using modern development tools and best practices.",
+                  title: "Frontend Developer",
+                  text: "Building and refining responsive websites and web app interfaces, turning product requirements into clear layouts and reliable frontend features.",
                   meta: "FREELANCER\n2025-PRESENT",
                 },
               ].map((item, index) => (
@@ -708,12 +769,11 @@ export default function Home() {
               <div>
                 <div className="text-xs text-blue-200">01</div>
                 <h3 className="mt-2 text-3xl font-semibold">
-                  Monthly Product Retainer
+                  Frontend Development Retainer
                 </h3>
                 <p className="mt-4 max-w-md text-blue-100">
-                  A focused monthly partnership for teams that need consistent
-                  senior product development without growing a full internal
-                  team.
+                  A focused monthly partnership for teams that need dependable
+                  frontend support without adding a full-time hire.
                 </p>
               </div>
               <div className="text-right text-xl font-medium">
@@ -723,11 +783,11 @@ export default function Home() {
 
             <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {[
-                "Dedicated monthly development capacity",
-                "Product strategy and technical planning",
-                "Full-stack feature development",
-                "Weekly progress and priority reviews",
-                "Ongoing improvements and maintenance",
+                "Dedicated frontend development time",
+                "Responsive website and web app interfaces",
+                "Reusable components and UI improvements",
+                "Regular progress updates and reviews",
+                "Ongoing frontend fixes and refinements",
               ].map((item) => (
                 <div
                   key={item}
@@ -745,8 +805,13 @@ export default function Home() {
               <div>
                 <div className="text-xs text-blue-200">02</div>
                 <h3 className="mt-2 text-3xl font-semibold">
-                  Project Development
+                  Website & Web App Frontends
                 </h3>
+                <p className="mt-4 max-w-md text-blue-100">
+                  From a new landing page to a complete web app interface, I
+                  build responsive frontend experiences around your product and
+                  the people using it.
+                </p>
               </div>
               <div className="text-right text-xl font-medium">
                 Open to Negotiation
@@ -825,7 +890,7 @@ export default function Home() {
             className="mb-4 text-xs tracking-widest text-slate-400"
             delay={100}
           >
-            07 / CLIENT WORDS
+            07 / CLIENT WORDS & PROJECT HIGHLIGHTS
           </FadeIn>
 
           <FadeIn
@@ -839,50 +904,81 @@ export default function Home() {
           </FadeIn>
 
           <div className="mt-16 grid gap-6 md:grid-cols-2">
-            {[
-              // {
-              //   quote:
-              //     "Working with Joshua was game-changing. His AI-assisted development approach saved us months of development time. The MVP exceeded our expectations.",
-              //   name: "Marcus Johnson",
-              //   role: "Product Manager at InnovateLab",
-              //   initials: "MJ",
-              // },
-              {
-                quote:
-                  "Joshua's expertise with modern tech stack helped us build a scalable product that handles thousands of users seamlessly.",
-                name: "Sarah Nosa",
-                role: "CEO at Velom Footwear",
-                initials: "SN",
-              },
-              {
-                quote:
-                  "The traditional development that Joshua brings is unmatched. Our time-to-market was reduced by 50%.",
-                name: "David Park",
-                role: "CTO at RapidBuild Inc",
-                initials: "DP",
-              },
-            ].map((t, index) => (
-              <FadeIn
-                as="div"
-                key={t.name}
-                className="rounded-2xl border border-slate-700 bg-slate-900/50 p-8"
-                delay={200 + index * 70}
-              >
-                <div className="text-4xl text-slate-600">“</div>
-                <p className="mt-4 text-sm leading-relaxed text-slate-300">
-                  {t.quote}
-                </p>
-                <div className="mt-8 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-700 text-xs font-medium">
-                    {t.initials}
-                  </div>
-                  <div>
-                    <div className="font-medium">{t.name}</div>
-                    <div className="text-xs text-slate-400">{t.role}</div>
-                  </div>
+            <FadeIn
+              as="article"
+              className="rounded-2xl border border-slate-700 bg-slate-900/50 p-8"
+              delay={200}
+            >
+              <div className="text-4xl text-slate-600">“</div>
+              <p className="mt-4 text-sm leading-relaxed text-slate-300">
+                Joshua&apos;s expertise with modern tech stack helped us build a
+                scalable product that handles thousands of users seamlessly.
+              </p>
+              <div className="mt-8">
+                <div className="font-medium">Sarah Nosa</div>
+                <div className="text-xs text-slate-400">
+                  CEO at Velom Footwear
                 </div>
-              </FadeIn>
-            ))}
+              </div>
+            </FadeIn>
+
+            <FadeIn
+              as="article"
+              className="rounded-2xl border border-slate-700 bg-slate-900/50 p-8"
+              delay={270}
+            >
+              <div className="text-4xl text-slate-600">“</div>
+              <p className="mt-4 text-sm leading-relaxed text-slate-300">
+                The traditional development that Joshua brings is unmatched. Our
+                time-to-market was reduced by 50%.
+              </p>
+              <div className="mt-8">
+                <div className="font-medium">David Park</div>
+                <div className="text-xs text-slate-400">
+                  CTO at RapidBuild Inc
+                </div>
+              </div>
+            </FadeIn>
+
+            {[caseStudies[3], caseStudies[0], caseStudies[1]].map(
+              (project, index) => (
+                <FadeIn
+                  as="div"
+                  key={project.slug}
+                  className="rounded-2xl border border-slate-700 bg-slate-900/50 p-8"
+                  delay={340 + index * 70}
+                >
+                  <p className="text-xs font-medium uppercase tracking-[0.16em] text-blue-300">
+                    Project highlight
+                  </p>
+                  <p className="mt-2 text-xs font-medium uppercase tracking-[0.16em] text-slate-400">
+                    {project.subtitle}
+                  </p>
+                  <h3 className="mt-3 text-2xl font-semibold">
+                    {project.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-relaxed text-slate-300">
+                    {project.introduction}
+                  </p>
+                  <div className="mt-8 flex flex-wrap gap-5 text-sm font-medium">
+                    <Link
+                      href={`/work/${project.slug}`}
+                      className="text-white underline-offset-4 hover:underline"
+                    >
+                      Project details ↗
+                    </Link>
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-300 underline-offset-4 hover:text-white hover:underline"
+                    >
+                      Visit live site ↗
+                    </a>
+                  </div>
+                </FadeIn>
+              ),
+            )}
           </div>
         </div>
       </section>
@@ -927,16 +1023,28 @@ export default function Home() {
           <div className="mt-20 flex flex-wrap items-center justify-between gap-6 border-t border-slate-200 pt-8 text-xs text-slate-500">
             <div className="flex gap-6">
               <a
-                href="http://www.linkedin.com/in/joshua-braimoh-eroumousele"
+                href="https://www.linkedin.com/in/joshua-braimoh"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hover:text-slate-900"
               >
                 LINKEDIN
               </a>
               <a
                 href="https://x.com/jbraimoh_"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hover:text-slate-900"
               >
                 X / TWITTER
+              </a>
+              <a
+                href="https://github.com/Jbraimohtech"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-slate-900"
+              >
+                GITHUB
               </a>
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=braimohjoshua%40gmail.com"
