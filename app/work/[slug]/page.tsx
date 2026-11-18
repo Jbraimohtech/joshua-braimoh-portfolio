@@ -66,7 +66,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
       <section className="mx-auto max-w-7xl px-6 pb-12 pt-12 sm:px-10 sm:pb-16 sm:pt-20">
         <div className="mb-8 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.2em] text-blue-600">
-          <span>{caseStudy.number} / 03</span>
+          <span>{caseStudy.number} / 04</span>
           <span className="h-px w-10 bg-blue-200" />
           <span>Selected case study</span>
         </div>
@@ -86,6 +86,15 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           </p>
         </div>
 
+        <a
+          href={caseStudy.liveUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-slate-700 underline-offset-4 hover:text-blue-600 hover:underline"
+        >
+          View live project <span>↗</span>
+        </a>
+
         <div className="mt-10 flex flex-wrap gap-2">
           {caseStudy.tags.map((tag) => (
             <span
@@ -98,14 +107,20 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         </div>
 
         <div className="relative mt-12 aspect-[4/3] overflow-hidden rounded-2xl bg-slate-100 sm:mt-16 sm:aspect-[16/9] sm:rounded-3xl">
-          <ImageReveal
-            src={caseStudy.image}
-            alt={caseStudy.imageAlt}
-            fill
-            sizes="(max-width: 1024px) 100vw, 1200px"
-            className="absolute inset-0"
-            imageClassName="object-cover"
-          />
+          {caseStudy.image ? (
+            <ImageReveal
+              src={caseStudy.image}
+              alt={caseStudy.imageAlt}
+              fill
+              sizes="(max-width: 1024px) 100vw, 1200px"
+              className="absolute inset-0"
+              imageClassName="object-cover"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center bg-slate-100 px-8 text-center text-sm text-slate-500">
+              Midoman Bank App preview image coming soon
+            </div>
+          )}
           <span className="absolute bottom-4 left-4 rounded-full bg-white/90 px-4 py-2 text-[10px] font-medium uppercase tracking-[0.16em] text-slate-700 backdrop-blur sm:bottom-6 sm:left-6">
             Project {caseStudy.number} / 2026
           </span>

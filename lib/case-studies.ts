@@ -8,8 +8,9 @@ export type CaseStudy = {
   number: string;
   title: string;
   subtitle: string;
-  image: StaticImageData;
+  image: StaticImageData | null;
   imageAlt: string;
+  liveUrl: string;
   tags: string[];
   introduction: string;
   challenge: string;
@@ -25,32 +26,33 @@ export const caseStudies = [
     subtitle: "A Paramilitary Website",
     image: AmbchapcorpsImage,
     imageAlt: "Ambchapcorps website preview",
+    liveUrl: "https://ambchaplaincorps.org",
     tags: [
-      "CONVERSION DRIVEN RECRUITMENT",
-      "STORY PLANNING",
-      "CONTENT WORKFLOW",
+      "RESPONSIVE WEB DESIGN",
+      "RECRUITMENT EXPERIENCE",
+      "CONTENT HIERARCHY",
     ],
     introduction:
-      "A recruitment website shaped around a clear story, useful information, and a confident next step.",
+      "A clear, responsive recruitment website that helps visitors understand the organisation and find their next step.",
     challenge:
-      "Recruitment journeys ask visitors to make an important decision. The experience needs to communicate the opportunity clearly, build confidence, and make it easy to understand what to do next.",
+      "Recruitment information can be difficult to navigate when key details are scattered. The site needed a clear page structure that works just as well on a phone as it does on a desktop.",
     approach:
-      "The project brings story planning and content workflow into the structure of the website, so the message unfolds in a deliberate order and recruitment actions stay easy to find.",
+      "I focused the frontend on a straightforward content flow, readable sections and visible calls to action, making the main information easier to scan and act on.",
     focus: [
       {
-        title: "A clear recruitment path",
+        title: "Responsive layouts",
         description:
-          "Keep the route from first impression to taking action visible and straightforward.",
+          "Keep the content and calls to action comfortable to use across screen sizes.",
       },
       {
-        title: "Story-led content",
+        title: "Clear content hierarchy",
         description:
-          "Give the organisation's message a planned flow instead of leaving visitors to piece it together.",
+          "Give important recruitment details a natural order so visitors can find the information they need.",
       },
       {
-        title: "A repeatable content workflow",
+        title: "Confident next steps",
         description:
-          "Organise information so updates can be made consistently as the site evolves.",
+          "Make the routes to learn more or get involved easy to spot.",
       },
     ],
   },
@@ -61,68 +63,103 @@ export const caseStudies = [
     subtitle: "Developer Event Discovery Platform",
     image: DevEventImage,
     imageAlt: "DevEvent developer event discovery website",
+    liveUrl: "https://dev-events-nextjs-gamma.vercel.app",
     tags: [
-      "DEVELOPER EVENT DISCOVERY",
-      "EVENT LISTINGS",
-      "EVENT SUBMISSIONS",
+      "RESPONSIVE WEB APP",
+      "EVENT DISCOVERY UI",
+      "BROWSABLE LISTINGS",
     ],
     introduction:
-      "A discovery platform that helps developers find conferences and meetups, while giving event organizers a clear way to share what they are hosting.",
+      "A responsive event-discovery interface that helps developers browse conferences and meetups and gives organizers a clear route to share an event.",
     challenge:
-      "Developer events are announced across many different channels, making relevant opportunities easy to miss. DevEvent brings event details into one browsable experience, where visitors can explore listings by event, location, and date.",
+      "Event details are easy to miss when they are spread across different channels. The interface needed to make event options easy to browse and the key details simple to compare.",
     approach:
-      "The interface puts event discovery first: a direct introduction, a browsable collection of featured events, and a prominent path for organizers to submit an event.",
+      "I built the experience around scannable event cards, clear location and date details, and a visible submission path for organizers.",
     focus: [
       {
-        title: "Discover developer events",
+        title: "Browse with ease",
         description:
-          "Present a curated set of events so developers can quickly scan what is worth attending.",
+          "Present event options in a consistent layout that is easy to explore.",
       },
       {
-        title: "Make event details scannable",
+        title: "Surface the useful details",
         description:
-          "Surface the event name, location, and schedule in a consistent listing layout.",
+          "Make the name, location and schedule easy to pick out at a glance.",
       },
       {
-        title: "Support event organizers",
+        title: "Give organizers a clear path",
         description:
-          "Keep an obvious submit-an-event action close to the discovery experience.",
+          "Keep the event submission action close to the discovery experience.",
       },
     ],
   },
   {
     slug: "e-commerce-agency",
     number: "03",
-    title: "E-commerce Agency",
-    subtitle: "Creative Digital Agency Website",
+    title: "VELON Footwear",
+    subtitle: "Footwear E-commerce Frontend",
     image: EcommerceImage,
-    imageAlt: "E-commerce Agency website preview",
+    imageAlt: "VELON Footwear storefront preview",
+    liveUrl: "https://shoeproject-beta.vercel.app",
     tags: [
-      "EDITORIAL LANDING PAGE",
-      "SERVICE SHOWCASE",
-      "RESPONSIVE EXPERIENCE",
+      "E-COMMERCE FRONTEND",
+      "PRODUCT SHOWCASE",
+      "RESPONSIVE WEB DESIGN",
     ],
     introduction:
-      "A digital agency website concept balancing an editorial first impression with a clear presentation of services.",
+      "A footwear storefront with a bold visual identity, product-focused content and a straightforward path to explore the collection.",
     challenge:
-      "A creative agency needs to communicate its point of view while helping potential clients quickly understand what it offers. The page has to balance visual character with practical clarity across screen sizes.",
+      "An online storefront has to make the products the focus without losing the brand's personality. The experience also needs to stay easy to navigate on smaller screens.",
     approach:
-      "The project pairs an editorial landing page with a focused service showcase, using a responsive structure to keep the story legible from desktop to mobile.",
+      "I shaped the landing page around product imagery, concise brand messaging and clear collection links, with a responsive layout that keeps the shopping journey easy to follow.",
     focus: [
       {
-        title: "Editorial landing page",
+        title: "Product-first presentation",
         description:
-          "Set a distinct visual tone and establish the story from the first screen.",
+          "Use strong product imagery and concise copy to set the tone from the first screen.",
       },
       {
-        title: "Service showcase",
+        title: "Clear collection links",
         description:
-          "Present the offer clearly so visitors can find the information they need.",
+          "Help visitors move from the introduction to the products without getting lost.",
       },
       {
-        title: "Responsive experience",
+        title: "Responsive storefront",
         description:
-          "Keep the layout and content easy to explore across viewport sizes.",
+          "Keep the layout comfortable to browse on both desktop and mobile.",
+      },
+    ],
+  },
+  {
+    slug: "midoman-bank-app",
+    number: "04",
+    title: "Midoman Bank App",
+    subtitle: "Digital Banking & Escrow Dashboard",
+    image: null,
+    imageAlt: "Midoman Bank App dashboard preview",
+    liveUrl: "https://midomanbankapp.vercel.app",
+    tags: ["FINTECH DASHBOARD", "ACCOUNT ACTIVITY", "ESCROW WORKFLOWS"],
+    introduction:
+      "A banking dashboard that brings account information, recent activity and escrow actions together in one clear interface.",
+    challenge:
+      "People need to understand their account at a glance and find important actions without digging through menus. The dashboard needed to make balances, activity and escrow options easy to scan.",
+    approach:
+      "I focused the frontend on a clear account overview, readable transaction activity and quick access to escrow actions, keeping the key parts of the dashboard close at hand.",
+    focus: [
+      {
+        title: "Account overview",
+        description:
+          "Give account details and balance a clear place in the dashboard.",
+      },
+      {
+        title: "Readable activity",
+        description:
+          "Present recent transactions in a layout that is easy to review.",
+      },
+      {
+        title: "Quick access to escrow",
+        description:
+          "Keep the escrow actions visible alongside the account experience.",
       },
     ],
   },
